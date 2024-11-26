@@ -1,0 +1,35 @@
+name: Build HTML and deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Run this workflow whenever changes are pushed to the `main` branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20' 
+
+      # Install dependencies and run the script to generate index.html
+      - name: Run JavaScript to generate HTML
+        working-directory: .html_generator
+        run: |
+          npm install # Install bibtex dependency
+          node generate-html.js
+
+      # Deploy the generated HTML file and the pdfs in the main folder to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./ 
