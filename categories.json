@@ -1,0 +1,10 @@
+{
+    "book": "Book",
+    "networking": "Networking",
+    "accountability": "Accountability",
+    "authentication-pki": "Authentication and PKI",
+    "privacy-anonymity": "Privacy and Anonimity",
+    "DDoS": "DDoS",
+    "satellite": "Satellite",
+    "green-routing": "Green Routing"
+}
