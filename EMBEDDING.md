@@ -26,7 +26,7 @@ An example embedding using javascript:
   <script type="text/javascript">
     async function fetchPubs() {
       const targetDiv = document.getElementById('pub-div');
-      const remoteUrl = 'https://jeltevanbommel.github.io/test-scion-pub/index.html'; 
+      const remoteUrl = 'https://jeltevanbommel.github.io/scion-publications/index.html'; 
 
       try {
         // Fetch the publication list
